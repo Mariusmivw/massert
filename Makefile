@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/18 22:34:07 by mvan-wij      #+#    #+#                  #
-#    Updated: 2022/02/20 20:58:38 by mvan-wij      ########   odam.nl          #
+#    Updated: 2022/02/24 23:37:38 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ endif
 
 # Common
 LIBS	:=
-HEADERS	:= src/massert.h
+HEADERS	:= ./massert.h
 SOURCES	:= src/massert.c
 
 SRCDIR := src

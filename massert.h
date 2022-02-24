@@ -180,7 +180,7 @@ char	*ptr_str(intmax_t p);
  */
 #  define massert(value1, value2)												\
 {																				\
-	massert_compare(value1, value2);											\
+	massert_compare((value1), (value2));										\
 }
 # endif
 
