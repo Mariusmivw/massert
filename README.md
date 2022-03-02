@@ -1,5 +1,5 @@
 # massert
-MariusAssert / MatureAssert / MegaAssert / MightyAssert / MindfulAssert / MultipleAssert / MyAssert
+MagicAssert / MariusAssert / MarvelousAssert / MatureAssert / MegaAssert / MightyAssert / MindfulAssert / MonsterAssert / MultipleAssert / MyAssert
 
 An assert that automatically detect the type of its arguments ad compares them (if they're of the same type). Extensible with custom types.
 
