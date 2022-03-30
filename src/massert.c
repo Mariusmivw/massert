@@ -6,7 +6,7 @@
 /*   By: mvan-wij <mvan-wij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/18 22:26:01 by mvan-wij      #+#    #+#                 */
-/*   Updated: 2022/02/18 22:26:09 by mvan-wij      ########   odam.nl         */
+/*   Updated: 2022/03/30 18:18:37 by mvan-wij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,11 +143,17 @@ char	*float_str(intmax_t p)
 
 bool	str_eq(intmax_t a, intmax_t b)
 {
+	if ((char *)a == NULL && (char *)b == NULL)
+		return (true);
+	if ((char *)a == NULL || (char *)b == NULL)
+		return (false);
 	return (strcmp((char *)a, (char *)b) == 0);
 }
 
 char	*str_str(intmax_t p)
 {
+	if ((char *)p == NULL)
+		return (strdup("(null)"));
 	int len = strlen((char *)p);
 	char *dst = malloc((len + 2 + 1) * sizeof(char));
 	snprintf(dst, len + 2 + 1, "\"%s\"", (char *)p);
