@@ -6,7 +6,7 @@
 #    By: mvan-wij <mvan-wij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/02/18 22:34:07 by mvan-wij      #+#    #+#                  #
-#    Updated: 2022/02/24 23:37:38 by mvan-wij      ########   odam.nl          #
+#    Updated: 2022/03/30 18:07:27 by mvan-wij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,9 @@ LIBS	:=
 HEADERS	:= ./massert.h
 SOURCES	:= src/massert.c
 
-SRCDIR := src
 OBJDIR := obj
 
-OBJECTS := $(patsubst $(SRCDIR)/%, $(OBJDIR)/%, $(SOURCES:c=o))
+OBJECTS := $(addprefix $(OBJDIR)/, $(SOURCES:c=o))
 INCLUDES := $(sort $(addprefix -I, $(dir $(HEADERS))))
 
 .PHONY: all clean fclean re debug
@@ -64,9 +63,7 @@ test: $(NAME) src/test.c
 	@$(call print_prefix, "$@")
 	@printf "$(BLUE_FG)test$(RESET_COLOR) created\n"
 
-$(SRCDIR)/test.c: $(HEADERS)
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERS)
+$(OBJDIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(@D)
 # @$(call print_prefix, "make .o")
 	@$(call print_prefix, "$@")
